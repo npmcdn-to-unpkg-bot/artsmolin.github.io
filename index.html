@@ -32,13 +32,8 @@
       
       var TestApp = React.createClass({
         render: function(){
-          if (message != null){
-            var message = name;
-            return React.DOM.p(null, message);
-          }
-          else {
-            return "<a href="https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53">Войти через ВК</a>";
-          }
+          var message = "<a href="https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53">Войти через ВК</a>";
+          React.DOM.p(null, message);
         }
       });
       
