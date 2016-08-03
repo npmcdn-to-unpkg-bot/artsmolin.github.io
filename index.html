@@ -38,7 +38,9 @@
         }
       });
       
-      ReactDOM.render(<TestApp />, document.getElementById('AuthTestApp'));
+      var TestAppFactory = React.createFactory(TestApp);
+      
+      ReactDOM.render(TestAppFactory(), document.getElementById('AuthTestApp'));
     </script>
   </body>
 </html>
