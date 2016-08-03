@@ -7,23 +7,8 @@
   </head>
   <body>
     <h1>Basic Example</h1>
-    <div id="container">
-      <p>
-        To install React, follow the instructions on
-        <a href="https://github.com/facebook/react/">GitHub</a>.
-      </p>
-      <p>
-        If you can see this, React is <strong>not</strong> working right.
-        If you checked out the source from GitHub make sure to run <code>grunt</code>.
-      </p>
-    </div>
-    <h4>Example Details</h4>
-    <p>This is written in vanilla JavaScript (without JSX) and transformed in the browser.</p>
-    <p>
-      Learn more about React at
-      <a href="https://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
-      <a href="https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53">Войти через ВК</a>
-    </p>
+    <a href="https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53">Войти через ВК</a>
+
     <script src="js/react.js"></script>
     <script src="js/react-dom.js"></script>
    
@@ -34,40 +19,13 @@
       var arr_token = pre_token.split("&");
       var token = arr_token[0];
       var id = arr[3];
-      
-      var ExampleApplication = React.createClass({
-        render: function() {
-          var elapsed = Math.round(this.props.elapsed  / 100);
-          var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
-          var message =
-            'React has been successfully running for ' + seconds + ' seconds.' + token + ' ' + arr[3];
 
-          return React.DOM.p(null, message);
-        }
-      });
-
-      // Call React.createFactory instead of directly call ExampleApplication({...}) in React.rrender
-      var ExampleApplicationFactory = React.createFactory(ExampleApplication);
-
-      var start = new Date().getTime();
-      setInterval(function() {
-        ReactDOM.render(
-          ExampleApplicationFactory({elapsed: new Date().getTime() - start}),
-          document.getElementById('container')
-        );
-      }, 50);
-      
       var script = document.createElement('SCRIPT'); 
-
-script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
-
-document.getElementsByTagName("head")[0].appendChild(script); 
-
-function callbackFunc(result) { 
-alert(result.response[0].first_name) 
-
-}
-      
+      script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
+      document.getElementsByTagName("head")[0].appendChild(script); 
+      function callbackFunc(result) { 
+        alert(result.response[0].first_name) 
+      }
     </script>
   </body>
 </html>
