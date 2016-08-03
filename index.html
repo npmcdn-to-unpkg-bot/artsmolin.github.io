@@ -29,7 +29,6 @@
     <script>
       var url = window.location.hash;
       var arr = url.split("=");
-      arr[2] = arr[2].split("&");
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
