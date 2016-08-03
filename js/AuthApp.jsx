@@ -7,7 +7,7 @@ var TestApp = React.createClass({
         }
         if(getCookie("name") != undefined && getCookie("lastname") != undefined){
             return (
-                <h1>{cookie_name + " " + cookie_lastname} </h1>
+                <h1>{getCookie("name") + " " + getCookie("lastname")} </h1>
             );
         }
         if (name == undefined || lastname == undefined){
