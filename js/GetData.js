@@ -15,3 +15,13 @@ function callbackFunc(result) {
   name     = result.response[0].first_name;
   lastname = result.response[0].last_name;
 }
+
+function getData(){
+  var script = document.createElement('SCRIPT'); 
+  script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
+  document.getElementsByTagName("head")[0].appendChild(script); 
+  function callbackFunc(result) {
+    name     = result.response[0].first_name;
+    lastname = result.response[0].last_name;
+  }
+}
