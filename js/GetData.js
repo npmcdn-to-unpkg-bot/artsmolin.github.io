@@ -46,4 +46,5 @@ function callbackFunc(result) {
   lastname = result.response[0].last_name;
   setCookie("name", name);
   setCookie("lastname", lastname);
+  alert(document.cookie);
 }
