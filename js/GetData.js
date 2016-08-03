@@ -47,4 +47,4 @@ function callbackFunc(result) {
 }
 
 var cookie_name = getCookie("name");
-var cookie_lastname = getCookie("lastname")
+var cookie_lastname = getCookie("lastname");
