@@ -34,7 +34,8 @@
       
       var TestApp = React.createClass({
         render: function(){
-          return React.DOM.p(null, "Hello");
+          var message = result.response[0].first_name;
+          return React.DOM.p(null, message);
         }
       });
       
