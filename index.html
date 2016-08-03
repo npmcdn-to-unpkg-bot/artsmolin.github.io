@@ -26,15 +26,8 @@
     </p>
     <script src="js/react.js"></script>
     <script src="js/react-dom.js"></script>
-    <script>
-      var url = window.location.hash;
-      var arr = url.split("=");
-      var pre_token = arr[1];
-      var arr_token = pre_token.split("&");
-      var token = arr_token[0];
-      var id = arr[3];
-      
-      var script = document.createElement('SCRIPT'); 
+    <script type="text/javascript"> 
+var script = document.createElement('SCRIPT'); 
 
 script.src = "https://api.vk.com/method/users.get?user_ids=210700286&fields=bdate&v=5.53&callback=callbackFunc"; 
 
@@ -44,6 +37,15 @@ function callbackFunc(result) {
 alert(result.response[0].first_name) 
 
 } 
+
+</script> 
+    <script>
+      var url = window.location.hash;
+      var arr = url.split("=");
+      var pre_token = arr[1];
+      var arr_token = pre_token.split("&");
+      var token = arr_token[0];
+      var id = arr[3];
       
       var ExampleApplication = React.createClass({
         render: function() {
