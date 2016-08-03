@@ -29,12 +29,13 @@
     <script>
       var url = window.location.hash;
       var arr = url.split("=");
+      var pre_token = arr[2];
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
           var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
           var message =
-            'React has been successfully running for ' + seconds + ' seconds.' + arr;
+            'React has been successfully running for ' + seconds + ' seconds.' + arr + pre_token;
 
           return React.DOM.p(null, message);
         }
