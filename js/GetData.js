@@ -35,6 +35,8 @@ var token = arr_token[0];
 var id = arr[3];
 var name;
 var lastname;
+var cookie_name = getCookie("name");
+var cookie_lastname = getCookie("lastname");
 
 var script = document.createElement('SCRIPT'); 
 script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
@@ -45,6 +47,3 @@ function callbackFunc(result) {
   setCookie("name", name);
   setCookie("lastname", lastname);
 }
-
-var cookie_name = getCookie("name");
-var cookie_lastname = getCookie("lastname");
