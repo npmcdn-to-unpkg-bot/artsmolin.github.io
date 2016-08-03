@@ -1,6 +1,6 @@
 var TestApp = React.createClass({
     render: function() {
-        if(getCookie("name") != undefined && getCookie("lastname") != undefined){
+        if(cookie_name != undefined && cookie_lastname != undefined){
             return (
                 <h1>{cookie_name + " " + cookie_lastname} </h1>
             );
