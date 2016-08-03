@@ -1,4 +1,4 @@
-var HelloWorld = React.createClass({
+var TestApp = React.createClass({
     render: function() {
         if (name == undefined || lastname == undefined){
             return (
@@ -7,13 +7,13 @@ var HelloWorld = React.createClass({
         } 
         else{
             return (
-                <h1>{name + lastname} </h1>
+                <h1>{name + " " + lastname} </h1>
             );
         }
     }
     });
 
 ReactDOM.render(
-    <HelloWorld date={new Date()} />,
+    <TestApp />,
     document.getElementById('example')
 );
