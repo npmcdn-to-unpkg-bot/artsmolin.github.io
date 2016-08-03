@@ -42,10 +42,9 @@ document.getElementsByTagName("head")[0].appendChild(script);
 function callbackFunc(result) {
   name     = result.response[0].first_name;
   lastname = result.response[0].last_name;
+  setCookie("name", name);
+  setCookie("lastname", lastname);
 }
-
-setCookie("name", name);
-setCookie("lastname", lastname);
 
 var cookie_name = getCookie("name");
 var cookie_lastname = getCookie("lastname")
