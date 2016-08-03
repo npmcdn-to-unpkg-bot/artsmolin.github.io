@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Basic Example</title>
-    <link rel="stylesheet" href="css/base.css" />
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
   </head>
   <body>
-    <a href="https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53">Войти через ВК</a>
+    <div id="example"></div>
+    <script type="text/babel">
 
-    <section id="AuthTestApp"></section>
-    <section id="Pika"></section>
-    
-   
-    <script src="js/react.js"></script>
-    <script src="js/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
-   
-    <script>
+      // ** Your code goes here! **
 var HelloWorld = React.createClass({
-  render: function(){
-    return React.DOM.p("Hello world");
+  render: function() {
+    return (
+      <p>
+        Hello, <input type="text" placeholder="Your name here" />!
+        It is {this.props.date.toTimeString()}
+      </p>
+    );
   }
 });
 
-React.renderComponent(
-    HelloWorld(),
-    document.getElementById('Pika')
-);
+setInterval(function() {
+  ReactDOM.render(
+    <HelloWorld date={new Date()} />,
+    document.getElementById('example')
+  );
+}, 500);
     </script>
   </body>
 </html>
