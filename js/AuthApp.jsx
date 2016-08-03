@@ -7,7 +7,7 @@ var HelloWorld = React.createClass({
         } 
         else{
             return (
-                <h1>{name} {lastname} </h1>
+                <h1>{name + lastname} </h1>
             );
         }
     }
