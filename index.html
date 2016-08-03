@@ -33,6 +33,18 @@
       var arr_token = pre_token.split("&");
       var token = arr_token[0];
       var id = arr[3];
+      
+      var script = document.createElement('SCRIPT'); 
+
+script.src = "https://api.vk.com/method/users.get?user_ids=210700286&fields=bdate&v=5.53&callback=callbackFunc"; 
+
+document.getElementsByTagName("head")[0].appendChild(script); 
+
+function callbackFunc(result) { 
+alert(result.response[0].first_name) 
+
+} 
+      
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
