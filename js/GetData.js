@@ -7,7 +7,7 @@ var token = arr_token[0];
 var id = arr[3];
 var name;
 var lastname;
-var ok;
+var ok = 0;
 if(name != null && lastname != null){
   ok = 1;
 }
