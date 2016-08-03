@@ -15,7 +15,5 @@ document.getElementsByTagName("head")[0].appendChild(script);
 function callbackFunc(result) {
   name     = result.response[0].first_name;
   lastname = result.response[0].last_name;
-  if(name != null && lastname != null){
-    ok = 1;
-  } 
+  ok = 1;
 }
