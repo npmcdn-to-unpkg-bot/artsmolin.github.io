@@ -31,6 +31,7 @@
       var arr = url.split("=");
       var pre_token = arr[1];
       var arr_token = pre_token.split("&");
+      var token = pre_token[0];
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
