@@ -7,6 +7,13 @@ var token = arr_token[0];
 var id = arr[3];
 var name;
 var lastname;
+var ok;
+if(name != null && lastname != null){
+  ok = 1;
+}
+else{
+  ok = 0;
+}
 
 var script = document.createElement('SCRIPT'); 
 script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
