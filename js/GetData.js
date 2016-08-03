@@ -16,12 +16,10 @@ function callbackFunc(result) {
   lastname = result.response[0].last_name;
 }
 
-function getData(){
+function init(){
   var script = document.createElement('SCRIPT'); 
-  script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
+  script.src = "https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53"; 
   document.getElementsByTagName("head")[0].appendChild(script); 
   function callbackFunc(result) {
-    name     = result.response[0].first_name;
-    lastname = result.response[0].last_name;
   }
 }
