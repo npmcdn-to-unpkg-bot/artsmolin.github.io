@@ -8,27 +8,39 @@
     <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
   </head>
   <body>
+    
+    <section id="AuthTestApp"></section>
+    <a href="https://oauth.vk.com/authorize?client_id=5572694&display=page&redirect_uri=http://artsmolin.github.io&scope=friends&response_type=token&v=5.53">Войти через ВК</a>
+
+   
     <div id="example"></div>
     <script type="text/babel">
+      var url = window.location.hash;
+      var arr = url.split("=");
+      var pre_token = arr[1];
+      var arr_token = pre_token.split("&");
+      var token = arr_token[0];
+      var id = arr[3];
+      var name;
 
-      // ** Your code goes here! **
-var HelloWorld = React.createClass({
-  render: function() {
-    return (
-      <p>
-        Hello, <input type="text" placeholder="Your nameы here" />!
-        It is {this.props.date.toTimeString()}
-      </p>
-    );
-  }
-});
-
-setInterval(function() {
-  ReactDOM.render(
-    <HelloWorld date={new Date()} />,
-    document.getElementById('example')
-  );
-}, 500);
+      var script = document.createElement('SCRIPT'); 
+      script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
+      document.getElementsByTagName("head")[0].appendChild(script); 
+      function callbackFunc(result) {
+        name = result.response[0].first_name;
+      }
+      
+      var TestApp = React.createClass({
+        render: function(){
+          var message = name;
+          return React.DOM.p(null, message);
+        }
+      });
+      
+      var TestAppFactory = React.createFactory(TestApp);
+      
+      ReactDOM.render(TestAppFactory(), document.getElementById('AuthTestApp'));
+    
     </script>
   </body>
 </html>
