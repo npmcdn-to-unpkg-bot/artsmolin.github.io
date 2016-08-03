@@ -6,19 +6,6 @@
     <link rel="stylesheet" href="css/base.css" />
   </head>
   <body>
-     <script type="text/javascript"> 
-var script = document.createElement('SCRIPT'); 
-
-script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
-
-document.getElementsByTagName("head")[0].appendChild(script); 
-
-function callbackFunc(result) { 
-alert(result.response[0].first_name) 
-
-} 
-
-</script> 
     <h1>Basic Example</h1>
     <div id="container">
       <p>
@@ -69,6 +56,18 @@ alert(result.response[0].first_name)
           document.getElementById('container')
         );
       }, 50);
+      
+      var script = document.createElement('SCRIPT'); 
+
+script.src = "https://api.vk.com/method/users.get?user_ids=" + id + "&fields=bdate&v=5.53&callback=callbackFunc"; 
+
+document.getElementsByTagName("head")[0].appendChild(script); 
+
+function callbackFunc(result) { 
+alert(result.response[0].first_name) 
+
+}
+      
     </script>
   </body>
 </html>
