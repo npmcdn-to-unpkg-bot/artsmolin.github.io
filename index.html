@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="css/base.css" />
   </head>
   <body>
+     <script type="text/javascript"> 
+var script = document.createElement('SCRIPT'); 
+
+script.src = "https://api.vk.com/method/users.get?user_ids=210700286&fields=bdate&v=5.53&callback=callbackFunc"; 
+
+document.getElementsByTagName("head")[0].appendChild(script); 
+
+function callbackFunc(result) { 
+alert(result.response[0].first_name) 
+
+} 
+
+</script> 
     <h1>Basic Example</h1>
     <div id="container">
       <p>
@@ -26,19 +39,7 @@
     </p>
     <script src="js/react.js"></script>
     <script src="js/react-dom.js"></script>
-    <script type="text/javascript"> 
-var script = document.createElement('SCRIPT'); 
-
-script.src = "https://api.vk.com/method/users.get?user_ids=210700286&fields=bdate&v=5.53&callback=callbackFunc"; 
-
-document.getElementsByTagName("head")[0].appendChild(script); 
-
-function callbackFunc(result) { 
-alert(result.response[0].first_name) 
-
-} 
-
-</script> 
+   
     <script>
       var url = window.location.hash;
       var arr = url.split("=");
