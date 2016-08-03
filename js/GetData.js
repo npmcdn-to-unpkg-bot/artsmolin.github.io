@@ -46,5 +46,3 @@ function callbackFunc(result) {
 
 setCookie("name", name);
 setCookie("lastname", lastname);
-
-alert( getCookie("name") );
