@@ -28,6 +28,7 @@
     <script src="js/react-dom.js"></script>
     <script>
       var url = window.location.hash;
+      var arr = url.split("=");
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
