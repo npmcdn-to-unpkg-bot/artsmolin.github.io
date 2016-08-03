@@ -1,3 +1,16 @@
+window.vkAsyncInit = function() {
+    VK.init({
+      apiId: 5572694
+    });
+  };
+
+  setTimeout(function() {
+    var el = document.createElement("script");
+    el.type = "text/javascript";
+    el.src = "//vk.com/js/api/openapi.js";
+    el.async = true;
+    document.getElementById("vk_api_transport").appendChild(el);
+  }, 0);
 
 var url = window.location.hash;
 var arr = url.split("=");
