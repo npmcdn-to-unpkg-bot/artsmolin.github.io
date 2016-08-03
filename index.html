@@ -27,12 +27,13 @@
     <script src="js/react.js"></script>
     <script src="js/react-dom.js"></script>
     <script>
+      var url = window.location.href;
       var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
           var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
           var message =
-            'React has been successfully running for ' + seconds + ' seconds.';
+            'React has been successfully running for ' + seconds + ' seconds.' + url;
 
           return React.DOM.p(null, message);
         }
