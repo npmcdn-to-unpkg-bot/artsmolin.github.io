@@ -46,3 +46,6 @@ function callbackFunc(result) {
 
 setCookie("name", name);
 setCookie("lastname", lastname);
+
+var cookie_name = getCookie("name");
+var cookie_lastname = getCookie("lastname")
