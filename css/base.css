@@ -10,6 +10,6 @@ body {
 
 body div {
   text-align: left;
-  display: block;
+  display: inline-block;
   font-family: "Lora", sans-serif;
 }
